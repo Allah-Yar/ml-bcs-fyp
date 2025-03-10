@@ -11,7 +11,7 @@ const GrokBackground = () => {
         width: '100vw',
         height: '100vh',
         // background: 'linear-gradient(135deg,rgb(0, 0, 2) 0%,rgb(5, 8, 15) 100%), ',
-        background: 'linear-gradient(135deg, black 0%, #212121 100%)', // Simple dark gradient
+        background: "linear-gradient(135deg, #0d1321 0%, #1d3557 50%, #546e7a 100%)",
         zIndex: -1, // Behind content
       }}
     />

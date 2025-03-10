@@ -230,7 +230,7 @@ const ImageUploadForm = () => {
         alignItems: 'center',
         marginTop: '2rem',
         minHeight: '100vh',
-        bgcolor: 'black',
+        
         padding: { xs: 2, sm: 3 },
       }}
     >

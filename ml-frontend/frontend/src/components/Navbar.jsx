@@ -58,7 +58,7 @@ const Navbar = () => {
   );
 
   return (
-    <AppBar position="fixed" sx={{ bgcolor: '#546e7a', zIndex: 1000,  }}>
+    <AppBar position="fixed" sx={{  background: "linear-gradient(135deg, #0d1321 0%, #1d3557 50%, #546e7a 100%)", zIndex: 1000,  }}>
       <Toolbar sx={{ justifyContent: 'space-between' }}>
         {/* Logo/Title */}
         <Typography 
@@ -103,7 +103,7 @@ const Navbar = () => {
           '& .MuiDrawer-paper': { 
             boxSizing: 'border-box', 
             width: 250 ,
-            backgroundColor: 'black',
+            background: "linear-gradient(135deg, #0d1321 0%, #1d3557 50%, #546e7a 100%)",
             borderRadius: 2,
             borderColor: 'white',
             borderWidth: 1,
