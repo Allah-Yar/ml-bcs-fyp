@@ -412,6 +412,7 @@
 import React from "react";
 import { Container, Typography, Box, Button } from "@mui/material";
 import { styled } from "@mui/material/styles";
+import {ReactTyped} from "react-typed";
 import { Link } from "react-router-dom";
 import PkrNote from "../assets/pakistani-rupees.jpg";
 
@@ -422,7 +423,7 @@ const FullWidthContainer = styled(Container)(({ theme }) => ({
   margin: 0,
   display: "flex",
   alignItems: "center",
-  background: "linear-gradient(135deg, #1a1b41 0%, #2e3b55 100%)",
+  // background: "linear-gradient(135deg, #1a1b41 0%, #2e3b55 100%)",
   position: "relative",
   overflowX: "hidden", // Prevent horizontal scroll issues
 }));
@@ -454,23 +455,34 @@ const TextContainer = styled(Box)(({ theme }) => ({
     textAlign: "center",
     marginTop: theme.spacing(3),
   },
+  [theme.breakpoints.down("sm")]: {
+    fontSize: "0.9rem",
+    marginTop: theme.spacing(2),
+    padding: theme.spacing(1),
+
+    
+    
+  },
 }));
 
 const ImageContainer = styled(Box)(({ theme }) => ({
   flex: "0 0 50%",
   display: "flex",
   justifyContent: "flex-end",
+  
   [theme.breakpoints.down("md")]: {
     flex: "100%",
     justifyContent: "center",
     marginBottom: theme.spacing(3),
+    marginTop: theme.spacing(5),
   },
 }));
 
 const StyledImage = styled("img")(({ theme }) => ({
   maxWidth: "100%",
   height: "auto",
-  borderRadius: 15,
+  borderRadius: 8,
+  // marginRight: theme.spacing(4),
   boxShadow: "0 10px 30px rgba(0, 0, 0, 0.3)",
   transition: "transform 0.3s ease",
   "&:hover": {
@@ -491,7 +503,8 @@ const ModernButton = styled(Button)(({ theme }) => ({
   textTransform: "none",
   fontWeight: "bold",
   fontSize: "1.1rem",
-  background: "linear-gradient(90deg, #4a90e2 0%, #63b3ed 100%)",
+  // background: "linear-gradient(90deg, #4a90e2 0%, #63b3ed 100%)",
+    background: "linear-gradient(90deg, #4a90e2 0%, #50bfa5 100%)",
   color: "white",
   boxShadow: "0 4px 15px rgba(74, 144, 226, 0.4)",
   transition: "all 0.3s ease",
@@ -516,19 +529,58 @@ const HomePage = () => {
             component="h1"
             sx={{
               color: "#ffffff",
-              fontWeight: 700,
+              fontWeight: 600,
               letterSpacing: 1,
               lineHeight: 1.2,
+              fontSize: "2.5rem",
+              
               [theme => theme.breakpoints.down("md")]: {
-                fontSize: "2.5rem",
+                fontSize: "1rem",
+                
+                
               },
               [theme => theme.breakpoints.down("sm")]: {
-                fontSize: "1.8rem",
+                fontSize: "1rem",
+                fontWeight: 400,
+                
+                
               },
             }}
           >
-            Welcome to ML Frontend
+            ML-Based Fake Currency Detection System
           </Typography>
+         
+{/* <Typography
+  variant="h2"
+  component="h1"
+  sx={{
+    color: "#ffffff",
+    fontWeight: 700,
+    letterSpacing: 1,
+    lineHeight: 1.2,
+    textAlign: "center",
+    [theme => theme.breakpoints.down("md")]: {
+      fontSize: "2.0rem",
+    },
+    [theme => theme.breakpoints.down("sm")]: {
+      fontSize: "1.2rem",
+    },
+  }}
+>
+Welcome to ML-Based Fake Currency Detection System
+  {/* <span>
+    <ReactTyped
+      strings={[
+        
+        "Detect Fake Currency with AI!",
+        "Secure & Fast Fake Note Detection",
+      ]}
+      typeSpeed={50}
+      backSpeed={30}
+      loop
+    />
+  </span> */}
+{/* </Typography> */} 
           <Typography
             variant="h5"
             sx={{
