@@ -27,8 +27,8 @@ const Navbar = () => {
 
   const navItems = [
     { label: 'Home', path: '/' },
-    { label: 'Check',  path: '/check' },
-    { label: 'Instructions', path: '/instructions' },
+    { label: 'Check',  path: 'check' },
+    { label: 'Instructions', path: 'instructions' },
   ];
 
   const handleDrawerToggle = () => {
