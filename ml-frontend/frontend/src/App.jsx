@@ -7,7 +7,7 @@ import Navbar from "./components/Navbar";
 import GrokBackground from "./GrokBackground";
 import Home from "./pages/Home";
 import ImageUploadForm from "./components/ImageUploadForm";
-import Instructions from "./pages/Instructions";
+import Instructions from "./components/Instructions";
 
 function App() {
   return (
@@ -19,8 +19,9 @@ function App() {
         {/* Wrap all routes inside Layout */}
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="check" element={<ImageUploadForm />} />
           <Route path="instructions" element={<Instructions />} />
+          <Route path="check" element={<ImageUploadForm />} />
+         
         </Route>
       </Routes>
       </div>
