@@ -1,8 +1,9 @@
-import mongoose, { mongo } from 'mongoose';
+import mongoose from 'mongoose';
+import dotenv from 'dotenv';
 import colors from 'colors';
 
 // Connect to MongoDB
-const MONGO_URI = 'mongodb://localhost:27017/sultanDB';
+const MONGO_URI = process.env.MONGO_URI;
 
 const connectDB = async () => {
     try {
