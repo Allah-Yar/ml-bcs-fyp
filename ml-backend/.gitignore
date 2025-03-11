@@ -1,5 +1,5 @@
 # Node.js dependencies
-node_modules/
+node_modules
 package-lock.json
 
 # Environment variables
@@ -29,7 +29,7 @@ build/
 Thumbs.db
 
 # Uploads (if storing user uploads)
-uploads/
+uploads
 
 # IDE-specific files
 .vscode/
