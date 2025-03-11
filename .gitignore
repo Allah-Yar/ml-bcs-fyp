@@ -1,0 +1,11 @@
+ml-backend/node_modules
+ml-backend/.env
+ml-backend/package-lock.json
+ml-backend/uploads
+ml-backend/.gitignore
+ml-backend/dist
+
+ml-frontend/frontend/node_modules
+ml-frontend/frontend/package-lock.json
+ml-frontend/frontend/dist
+ml-frontend/frontend/.gitignore
