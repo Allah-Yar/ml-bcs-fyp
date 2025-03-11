@@ -121,13 +121,13 @@ const ImageUploadForm = () => {
       reader.readAsDataURL(file);
     }
   };
-
   const handleSubmit = async (event) => {
     event.preventDefault();
+
     if (!selectedFile) {
-      setError('Please select or capture an image first');
-      setModalOpen(true); // Open modal with error
-      return;
+        setError('Please select or capture an image first');
+        setModalOpen(true);
+        return;
     }
 
     setIsLoading(true);
@@ -135,24 +135,58 @@ const ImageUploadForm = () => {
     setPrediction(null);
 
     const formData = new FormData();
-    formData.append('file', selectedFile);
+    formData.append('image', selectedFile); // ✅ Use 'image', which backend expects
 
     try {
-      const response = await axios.post('http://localhost:8000/predict', formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data',
-        },
-      });
-      setPrediction(response.data.prediction);
-      setModalOpen(true); // Open modal with result
+        const response = await axios.post('http://localhost:5000/api/detections', formData, {
+            headers: {
+                'Content-Type': 'multipart/form-data',
+            },
+        });
+
+        setPrediction(response.data); // ✅ Show ML result
+        setModalOpen(true);
     } catch (err) {
-      setError('Error uploading image. Please try again.');
-      setModalOpen(true); // Open modal with error
-      console.error('Error:', err);
+        setError('Error uploading image. Please try again.');
+        setModalOpen(true);
+        console.error('❌ Error:', err.response?.data || err.message);
     } finally {
-      setIsLoading(false);
+        setIsLoading(false);
     }
-  };
+};
+
+
+  // const handleSubmit = async (event) => {
+  //   event.preventDefault();
+  //   if (!selectedFile) {
+  //     setError('Please select or capture an image first');
+  //     setModalOpen(true); // Open modal with error
+  //     return;
+  //   }
+
+  //   setIsLoading(true);
+  //   setError(null);
+  //   setPrediction(null);
+
+  //   const formData = new FormData();
+  //   formData.append('file', selectedFile);
+
+  //   try {
+  //     const response = await axios.post('http://localhost:8000/predict', formData, {
+  //       headers: {
+  //         'Content-Type': 'multipart/form-data',
+  //       },
+  //     });
+  //     setPrediction(response.data.prediction);
+  //     setModalOpen(true); // Open modal with result
+  //   } catch (err) {
+  //     setError('Error uploading image. Please try again.');
+  //     setModalOpen(true); // Open modal with error
+  //     console.error('Error:', err);
+  //   } finally {
+  //     setIsLoading(false);
+  //   }
+  // };
 
   const handleChooseFileClick = (event) => {
     setAnchorEl(event.currentTarget);
