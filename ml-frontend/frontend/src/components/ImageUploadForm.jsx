@@ -17,6 +17,7 @@ import { styled } from '@mui/material/styles';
 import UploadFileIcon from '@mui/icons-material/UploadFile';
 import CameraAltIcon from '@mui/icons-material/CameraAlt';
 import PredictionResult from './PredictionResult';
+import { redirect } from 'react-router-dom';
 
 const StyledPaper = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(3),
@@ -45,14 +46,17 @@ const StyledButton = styled(Button)(({ theme }) => ({
   textTransform: 'none',
   fontWeight: 'bold',
   fontSize: '1.1rem',
-  background: 'linear-gradient(45deg, #546e7a 30%, #78909c 90%)',
+  // background: 'linear-gradient(45deg, #546e7a 30%, #78909c 90%)',
+  background: "linear-gradient(90deg, #4a90e2 0%, #50bfa5 100%)",
   color: 'white',
   boxShadow: '0 4px 15px rgba(84, 110, 122, 0.5)',
   transition: 'transform 0.2s ease, background 0.3s ease',
   '&:hover': {
-    background: 'linear-gradient(45deg, #455a64 30%, #607d8b 90%)',
+    // background: 'linear-gradient(45deg, #455a64 30%, #607d8b 90%)',
+    background: "linear-gradient(90deg, #357ab7 0%, #4299e1 100%)",
     transform: 'scale(1.05)',
-    boxShadow: '0 6px 20px rgba(84, 110, 122, 0.7)',
+    // boxShadow: '0 6px 20px rgba(84, 110, 122, 0.7)',
+    boxShadow: "0 6px 20px rgba(74, 144, 226, 0.6)",
   },
   '&:disabled': {
     background: '#b0bec5',
@@ -220,6 +224,7 @@ const ImageUploadForm = () => {
     setError(null); // Clear error when closing
     setPrediction(null); // Clear prediction when closing
     window.location.reload(); // Reload page to reset form
+    redirect('check'); // Redirect to check page
   };
 
   return (
@@ -241,26 +246,32 @@ const ImageUploadForm = () => {
 
         <form onSubmit={handleSubmit}>
           <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-            <Button
-              variant="outlined"
-              onClick={handleChooseFileClick}
-              sx={{
-                alignSelf: 'center',
-                borderRadius: 8,
-                padding: '10px 20px',
-                background: 'linear-gradient(45deg, #546e7a 30%, #78909c 90%)',
-                textTransform: 'none',
-                fontSize: '16px',
-                color: 'white',
-                borderColor: '#546e7a',
-                '&:hover': {
-                    background: 'linear-gradient(45deg, #455a64 30%, #607d8b 90%)',
-                  borderColor: '#212121',
-                },
-              }}
-            >
-              Choose File
-            </Button>
+<Button
+  variant="outlined"
+  onClick={handleChooseFileClick}
+  sx={{
+    alignSelf: 'center',
+    borderRadius: 6,
+    padding: '12px 24px',
+    backgroundColor: 'transparent',
+    textTransform: 'none',
+    fontSize: '16px',
+    color: '#1976d2',
+    fontWeight: 'bold',
+    borderColor: '#1976d2',
+    display: 'flex',
+    alignItems: 'center',
+    gap: '8px',
+    transition: 'background 0.3s ease-in-out, border-color 0.3s ease-in-out',
+    '&:hover': {
+      backgroundColor: 'rgba(25, 118, 210, 0.1)',
+      borderColor: '#1565c0',
+    },
+  }}
+>
+  <UploadFileIcon sx={{ color: '#1976d2' }} />
+  Choose File
+</Button>
 
             <input
               type="file"

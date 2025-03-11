@@ -39,7 +39,7 @@ const Instructions = () => {
 
           <List sx={{ pl: 2 }}>
             {[
-              "Upload your image using the upload button on the home page.",
+              "Upload your image using the Choose File button on the Check page.",
               "Wait for the model to process your image.",
               "View the results and predictions displayed on the screen.",
               "You can upload another image to get new predictions."

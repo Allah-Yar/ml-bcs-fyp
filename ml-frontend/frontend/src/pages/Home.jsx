@@ -7,15 +7,16 @@ import Instructions from "../components/Instructions";
 import ImageUploadForm from "../components/ImageUploadForm";
 // import { styled } from "@mui/material/styles";
 import { Link } from "react-router-dom";
+import Footer from "../components/Footer";
 
 
 
 
 const Home = () => {
   return (
-    <div>
+    <div> 
    
-      <Box mt={6}>
+      <Box mt={6} width="100%">
         <HomePage />
       </Box>
       <Box mt={6} width="100%">
@@ -24,6 +25,10 @@ const Home = () => {
       <Box mt={6} width="100%">
         <ImageUploadForm />
       </Box>
+      <Box mt={6} width="100%">
+        <Footer />
+      </Box>
+
 
     </div>
   );
